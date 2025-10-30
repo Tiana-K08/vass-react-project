@@ -1,7 +1,10 @@
-export default function HomepageItem() {
+export default function HomepageItem(props) {
   return (
     <>
-      <h3>This is Portfolio Item</h3>
+      <h3>{props.title}</h3>
+      <a href={props.url} target="_blank" rel="noopener noreferrer">
+        link
+      </a>
     </>
   );
 }
