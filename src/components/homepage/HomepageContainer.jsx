@@ -1,24 +1,33 @@
+import { useState } from 'react';
+
 import HomepageItem from './HomepageItem.jsx';
 
 export default function HomepageContainer() {
-  const homepageItems = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-    'Item 6',
-  ];
+  const [state, setState] = useState({
+    pageTitle: 'Welcome to my project',
+    homepageItems: [
+      { itemTitle: 'Item 1' },
+      { itemTitle: 'Item 2' },
+      { itemTitle: 'Item 3' },
+      { itemTitle: 'Item 4' },
+      { itemTitle: 'Item 5' },
+      { itemTitle: 'Item 6' },
+    ],
+  });
 
   function renderHomepageItems() {
-    return homepageItems.map((item, idx) => (
-      <HomepageItem key={idx} title={item} url={'https://www.google.com/'} />
+    return state.homepageItems.map((item, idx) => (
+      <HomepageItem
+        key={idx}
+        title={item.itemTitle}
+        url={'https://www.google.com/'}
+      />
     ));
   }
 
   return (
     <>
-      <h2>Portfolio items go here ...</h2>
+      <h2>{state.pageTitle}</h2>
       {renderHomepageItems()}
     </>
   );
