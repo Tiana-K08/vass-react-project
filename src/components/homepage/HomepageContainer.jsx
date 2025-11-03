@@ -15,6 +15,13 @@ export default function HomepageContainer() {
     ],
   });
 
+  const handlePageTitleUpdate = () => {
+    setState((prevState) => ({
+      ...prevState,
+      pageTitle: 'Something else ...',
+    }));
+  };
+
   function renderHomepageItems() {
     return state.homepageItems.map((item, idx) => (
       <HomepageItem
@@ -27,7 +34,7 @@ export default function HomepageContainer() {
 
   return (
     <>
-      <h2>{state.pageTitle}</h2>
+      <h2 onClick={handlePageTitleUpdate}>{state.pageTitle}</h2>
       {renderHomepageItems()}
     </>
   );
