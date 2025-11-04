@@ -3,27 +3,22 @@ import { useState } from 'react';
 import HomepageItem from './HomepageItem.jsx';
 
 export default function HomepageContainer() {
-  const [state, setState] = useState({
-    pageTitle: 'Welcome to my project',
-    homepageItems: [
-      { itemTitle: 'Item 1' },
-      { itemTitle: 'Item 2' },
-      { itemTitle: 'Item 3' },
-      { itemTitle: 'Item 4' },
-      { itemTitle: 'Item 5' },
-      { itemTitle: 'Item 6' },
-    ],
-  });
+  const [homepageTitle, setHomepageTitle] = useState('Welcome to my project');
+  const [homepageItems, setHomepageItems] = useState([
+    { itemTitle: 'Item 1' },
+    { itemTitle: 'Item 2' },
+    { itemTitle: 'Item 3' },
+    { itemTitle: 'Item 4' },
+    { itemTitle: 'Item 5' },
+    { itemTitle: 'Item 6' },
+  ]);
 
-  const handlePageTitleUpdate = () => {
-    setState((prevState) => ({
-      ...prevState,
-      pageTitle: 'Something else ...',
-    }));
+  const handleHomepageTitleUpdate = () => {
+    setHomepageTitle('Something else ...');
   };
 
   function renderHomepageItems() {
-    return state.homepageItems.map((item, idx) => (
+    return homepageItems.map((item, idx) => (
       <HomepageItem
         key={idx}
         title={item.itemTitle}
@@ -34,7 +29,7 @@ export default function HomepageContainer() {
 
   return (
     <>
-      <h2 onClick={handlePageTitleUpdate}>{state.pageTitle}</h2>
+      <h2 onClick={handleHomepageTitleUpdate}>{homepageTitle}</h2>
       {renderHomepageItems()}
     </>
   );
