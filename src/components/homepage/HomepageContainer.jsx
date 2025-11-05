@@ -11,6 +11,7 @@ export default function HomepageContainer() {
     { itemTitle: 'Item 5', category: 'Scheduling' },
     { itemTitle: 'Item 6', category: 'Enterprise' },
   ]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFilter = (filter) => {
     setHomepageItems(
@@ -30,6 +31,9 @@ export default function HomepageContainer() {
     ));
   }
 
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
   return (
     <>
       <h2>Welcome to my project</h2>
