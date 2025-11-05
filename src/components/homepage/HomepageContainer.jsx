@@ -3,18 +3,21 @@ import { useState } from 'react';
 import HomepageItem from './HomepageItem.jsx';
 
 export default function HomepageContainer() {
-  const [homepageTitle, setHomepageTitle] = useState('Welcome to my project');
   const [homepageItems, setHomepageItems] = useState([
-    { itemTitle: 'Item 1' },
-    { itemTitle: 'Item 2' },
-    { itemTitle: 'Item 3' },
-    { itemTitle: 'Item 4' },
-    { itemTitle: 'Item 5' },
-    { itemTitle: 'Item 6' },
+    { itemTitle: 'Item 1', category: 'eCommerce' },
+    { itemTitle: 'Item 2', category: 'Scheduling' },
+    { itemTitle: 'Item 3', category: 'Enterprise' },
+    { itemTitle: 'Item 4', category: 'eCommerce' },
+    { itemTitle: 'Item 5', category: 'Scheduling' },
+    { itemTitle: 'Item 6', category: 'Enterprise' },
   ]);
 
-  const handleHomepageTitleUpdate = () => {
-    setHomepageTitle('Something else ...');
+  const handleFilter = (filter) => {
+    setHomepageItems(
+      homepageItems.filter((item) => {
+        return item.category === filter;
+      })
+    );
   };
 
   function renderHomepageItems() {
@@ -29,7 +32,10 @@ export default function HomepageContainer() {
 
   return (
     <>
-      <h2 onClick={handleHomepageTitleUpdate}>{homepageTitle}</h2>
+      <h2>Welcome to my project</h2>
+      <button onClick={() => handleFilter('eCommerce')}>eCommerce</button>
+      <button onClick={() => handleFilter('Scheduling')}>Scheduling</button>
+      <button onClick={() => handleFilter('Enterprise')}>Enterprise</button>
       {renderHomepageItems()}
     </>
   );
