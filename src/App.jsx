@@ -1,3 +1,4 @@
+import NavigationContainer from './components/navigation/NavigationContainer.jsx';
 import HomepageContainer from './components/homepage/HomepageContainer.jsx';
 
 import './App.css';
@@ -5,7 +6,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <h1>Hello!</h1>
+      <NavigationContainer />
       <HomepageContainer />
     </>
   );
