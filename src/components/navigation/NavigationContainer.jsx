@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function NavigationContainer() {
   return (
     <div>
-      <Link to="/">Homepage</Link>
-      <Link to="/about-me">About</Link>
-      <Link to="/contact">Contact</Link>
-      <button>Blog</button>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/about">About</NavLink>
+      <NavLink to="/contact">Contact</NavLink>
+      <NavLink to="/blog">Blog</NavLink>
       {false ? <button>Add Blog</button> : null}
     </div>
   );
