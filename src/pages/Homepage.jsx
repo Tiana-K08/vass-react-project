@@ -1,4 +1,4 @@
-import HomepageContainer from '../homepage/HomepageContainer.jsx';
+import HomepageContainer from '../components/homepage/HomepageContainer.jsx';
 
 export default function Homepage() {
   return (

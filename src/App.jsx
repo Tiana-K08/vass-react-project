@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import NavigationContainer from './components/navigation/NavigationContainer.jsx';
-import Homepage from './components/pages/Homepage.jsx';
-import About from './components/pages/About.jsx';
-import Contact from './components/pages/Contact.jsx';
-import Blog from './components/pages/Blog.jsx';
+import NavigationContainer from './navigation/NavigationContainer.jsx';
+import Homepage from './pages/Homepage.jsx';
+import About from './pages/About.jsx';
+import Contact from './pages/Contact.jsx';
+import Blog from './pages/Blog.jsx';
 import HomepageItemDetail from './components/homepage/HomepageItemDetail.jsx';
 
 import './App.css';
