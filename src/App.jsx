@@ -5,6 +5,7 @@ import Homepage from './components/pages/Homepage.jsx';
 import About from './components/pages/About.jsx';
 import Contact from './components/pages/Contact.jsx';
 import Blog from './components/pages/Blog.jsx';
+import HomepageItemDetail from './components/homepage/HomepageItemDetail.jsx';
 
 import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/:slug" element={<HomepageItemDetail />} />
           </Routes>
         </div>
       </Router>

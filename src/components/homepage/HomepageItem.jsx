@@ -1,10 +1,10 @@
+import { Link } from 'react-router-dom';
+
 export default function HomepageItem(props) {
   return (
     <>
       <h3>{props.title}</h3>
-      <a href={props.url} target="_blank" rel="noopener noreferrer">
-        link
-      </a>
+      <Link to={`/${props.url}`}>Link to {props.url}</Link>
     </>
   );
 }

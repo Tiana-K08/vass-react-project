@@ -4,12 +4,12 @@ import HomepageItem from './HomepageItem.jsx';
 
 export default function HomepageContainer() {
   const [homepageItems, setHomepageItems] = useState([
-    { itemTitle: 'Item 1', category: 'eCommerce' },
-    { itemTitle: 'Item 2', category: 'Scheduling' },
-    { itemTitle: 'Item 3', category: 'Enterprise' },
-    { itemTitle: 'Item 4', category: 'eCommerce' },
-    { itemTitle: 'Item 5', category: 'Scheduling' },
-    { itemTitle: 'Item 6', category: 'Enterprise' },
+    { itemTitle: 'Item 1', category: 'eCommerce', url: 'item-1' },
+    { itemTitle: 'Item 2', category: 'Scheduling', url: 'item-2' },
+    { itemTitle: 'Item 3', category: 'Enterprise', url: 'item-3' },
+    { itemTitle: 'Item 4', category: 'eCommerce', url: 'item-4' },
+    { itemTitle: 'Item 5', category: 'Scheduling', url: 'item-5' },
+    { itemTitle: 'Item 6', category: 'Enterprise', url: 'item-6' },
   ]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -23,11 +23,7 @@ export default function HomepageContainer() {
 
   function renderHomepageItems() {
     return homepageItems.map((item, idx) => (
-      <HomepageItem
-        key={idx}
-        title={item.itemTitle}
-        url={'https://www.google.com/'}
-      />
+      <HomepageItem key={idx} title={item.itemTitle} url={item.url} />
     ));
   }
 
