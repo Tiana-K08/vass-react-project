@@ -7,7 +7,7 @@ export default function NavigationContainer() {
       <NavLink to="/about">About</NavLink>
       <NavLink to="/contact">Contact</NavLink>
       <NavLink to="/blog">Blog</NavLink>
-      {false ? <button>Add Blog</button> : null}
+      {/* {false ? <button>Add Blog</button> : null} */}
     </div>
   );
 }
