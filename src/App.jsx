@@ -12,13 +12,14 @@ import Contact from './pages/Contact.jsx';
 import Blog from './pages/Blog.jsx';
 import HomepageItemDetail from './components/homepage/HomepageItemDetail.jsx';
 import NotFound from './pages/NotFound.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 
 import './App.css';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
         <Route index element={<Homepage />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
