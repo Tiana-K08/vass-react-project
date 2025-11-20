@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import HomepageItem from './HomepageItem.jsx';
 
@@ -11,7 +12,19 @@ export default function HomepageContainer() {
     { itemTitle: 'Item 5', category: 'Scheduling', url: 'item-5' },
     { itemTitle: 'Item 6', category: 'Enterprise', url: 'item-6' },
   ]);
+
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get('https://tetkononenko.devcamp.space/portfolio/portfolio_items')
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const handleFilter = (filter) => {
     setHomepageItems(
