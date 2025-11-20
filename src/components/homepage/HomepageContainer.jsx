@@ -4,15 +4,7 @@ import axios from 'axios';
 import HomepageItem from './HomepageItem.jsx';
 
 export default function HomepageContainer() {
-  const [homepageItems, setHomepageItems] = useState([
-    { itemTitle: 'Item 1', category: 'eCommerce', url: 'item-1' },
-    { itemTitle: 'Item 2', category: 'Scheduling', url: 'item-2' },
-    { itemTitle: 'Item 3', category: 'Enterprise', url: 'item-3' },
-    { itemTitle: 'Item 4', category: 'eCommerce', url: 'item-4' },
-    { itemTitle: 'Item 5', category: 'Scheduling', url: 'item-5' },
-    { itemTitle: 'Item 6', category: 'Enterprise', url: 'item-6' },
-  ]);
-
+  const [homepageItems, setHomepageItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -20,6 +12,7 @@ export default function HomepageContainer() {
       .get('https://tetkononenko.devcamp.space/portfolio/portfolio_items')
       .then((response) => {
         console.log(response);
+        setHomepageItems(response.data.portfolio_items);
       })
       .catch((error) => {
         console.log(error);
@@ -35,8 +28,13 @@ export default function HomepageContainer() {
   };
 
   function renderHomepageItems() {
-    return homepageItems.map((item, idx) => (
-      <HomepageItem key={idx} title={item.itemTitle} url={item.url} />
+    return homepageItems.map((item) => (
+      <HomepageItem
+        key={item.id}
+        slug={item.id}
+        title={item.name}
+        url={item.url}
+      />
     ));
   }
 

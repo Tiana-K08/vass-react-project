@@ -4,7 +4,8 @@ export default function HomepageItem(props) {
   return (
     <>
       <h3>{props.title}</h3>
-      <Link to={`/home/${props.url}`}>Link to {props.url}</Link>
+      <p>{props.url}</p>
+      <Link to={`/home/${props.slug}`}>More details about {props.slug}</Link>
     </>
   );
 }
