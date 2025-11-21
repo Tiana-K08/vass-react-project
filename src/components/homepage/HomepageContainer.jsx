@@ -18,7 +18,7 @@ export default function HomepageContainer() {
       })
       .catch((error) => {
         console.log(error);
-        setError(error.message);
+        setError(error?.message);
         setLoading(false);
       });
   }, []);
@@ -42,12 +42,8 @@ export default function HomepageContainer() {
     ));
   }
 
-  if (loading) {
-    return <p>Loading ...</p>;
-  }
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
+  if (loading) return <p>Loading ...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <>
