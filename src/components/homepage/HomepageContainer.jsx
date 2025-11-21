@@ -5,7 +5,8 @@ import HomepageItem from './HomepageItem.jsx';
 
 export default function HomepageContainer() {
   const [homepageItems, setHomepageItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     axios
@@ -13,9 +14,12 @@ export default function HomepageContainer() {
       .then((response) => {
         console.log(response);
         setHomepageItems(response.data.portfolio_items);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
+        setLoading(false);
       });
   }, []);
 
@@ -38,9 +42,13 @@ export default function HomepageContainer() {
     ));
   }
 
-  if (isLoading) {
-    return <div>Loading ...</div>;
+  if (loading) {
+    return <p>Loading ...</p>;
   }
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
   return (
     <>
       <h2>Welcome to my project</h2>
