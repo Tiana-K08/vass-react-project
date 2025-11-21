@@ -33,12 +33,7 @@ export default function HomepageContainer() {
 
   function renderHomepageItems() {
     return homepageItems.map((item) => (
-      <HomepageItem
-        key={item.id}
-        slug={item.id}
-        title={item.name}
-        url={item.url}
-      />
+      <HomepageItem key={item.id} item={item} />
     ));
   }
 

@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
 
 export default function HomepageItem(props) {
+  // thumb_image_url, logo_url, description
+  const { id, name, url } = props.item;
+
   return (
     <>
-      <h3>{props.title}</h3>
-      <p>{props.url}</p>
-      <Link to={`/home/${props.slug}`}>More details about {props.slug}</Link>
+      <h3>{name}</h3>
+      <p>{url}</p>
+      <Link to={`/home/${id}`}>More details about {id}</Link>
     </>
   );
 }
