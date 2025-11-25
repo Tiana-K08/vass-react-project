@@ -14,8 +14,6 @@ import HomepageItemDetail from './components/homepage/HomepageItemDetail.jsx';
 import NotFound from './pages/NotFound.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 
-import './App.css';
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
