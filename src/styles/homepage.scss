@@ -1,0 +1,68 @@
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
+
+.filter-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.btn {
+  @include base-btn();
+}
+
+.hp-items-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.hp-item-wrapper {
+  position: relative;
+
+  .item-bg-img {
+    width: 100%;
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .item-content {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+
+    .logo-wrapper {
+      width: 100px;
+      height: 65px;
+
+      img {
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .text-wrapper {
+      color: transparent;
+      transition: 1s;
+    }
+  }
+
+  .item-content:hover {
+    .text-wrapper {
+      color: $offwhite;
+    }
+  }
+}
+
+.img-blur {
+  filter: brightness(20%);
+  transition: 1s;
+}

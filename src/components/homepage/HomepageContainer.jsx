@@ -42,11 +42,18 @@ export default function HomepageContainer() {
 
   return (
     <>
-      <h2>Welcome to my project</h2>
-      <button onClick={() => handleFilter('eCommerce')}>eCommerce</button>
-      <button onClick={() => handleFilter('Scheduling')}>Scheduling</button>
-      <button onClick={() => handleFilter('Enterprise')}>Enterprise</button>
-      {renderHomepageItems()}
+      <div className="filter-buttons">
+        <button className="btn" onClick={() => handleFilter('Ukraine')}>
+          Ukraine
+        </button>
+        <button className="btn" onClick={() => handleFilter('Spain')}>
+          Spain
+        </button>
+        <button className="btn" onClick={() => handleFilter('France')}>
+          France
+        </button>
+      </div>
+      <div className="hp-items-container">{renderHomepageItems()}</div>
     </>
   );
 }
